@@ -16,3 +16,5 @@ cursor is a single pass iterator
 
 ## SQL
 collection.find({"atribute": condition})
+
+## is userid really required
