@@ -1,4 +1,6 @@
 from pymongo import MongoClient
+from functions import *
+from bson.objectid import ObjectId
 
 # Replace the uri string with your MongoDB deployment's connection string.
 uri = "mongodb+srv://se33:se33@se3.mrwhfdo.mongodb.net/?retryWrites=true&w=majority&appName=Se3"
@@ -7,30 +9,19 @@ client.admin.command('ping')
 print("connected to mongodb")
 
 
+db = client.seproject3
+topic = ObjectId()
+user = ObjectId()
+create_video(user, topic, "video1", "url1", db.video)
+upvote_video(user, topic, "video1", "url1", db.video)
+upvote_video(user, topic, "video1", "url1", db.video)
+upvote_video(user, topic, "video1", "url1", db.video)
+upvote_video(user, topic, "video1", "url1", db.video)
+upvote_video(user, topic, "video1", "url1", db.video)
 
-# # database and collection code goes here
-# print(client)
-# print(client.list_database_names())
-# db = client.sample_guides
-# print(db)
+downvote_video(user, topic, "video1", "url1", db.video)
+downvote_video(user, topic, "video1", "url1", db.video)
+remove_video(user, topic, "video1", "url1", db.video)
 
-# print(db.list_collection_names())
-# coll = db.planets
-# print(coll)
-
-# print(coll.count_documents({}))
-# cursor = coll.find({"hasRings": True})
-# print(len(list(cursor)))
-
-# for doc in cursor:
-#     print(doc)
-
-# db = client.seproject3
-# print(client.list_database_names())
-
-# col = db.users
-# col.insert_one({"name": "Alice", "email": "Alice@gmail.com"})
-
-
-
+# close client
 client.close()
