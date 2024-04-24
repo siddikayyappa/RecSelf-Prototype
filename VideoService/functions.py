@@ -1,8 +1,6 @@
 import json
 from bson.objectid import ObjectId
 
-
-
 class JSONEncoder(json.JSONEncoder):
     """ Extend JSONEncoder class to handle ObjectId types in MongoDB documents. """
     def default(self, o):

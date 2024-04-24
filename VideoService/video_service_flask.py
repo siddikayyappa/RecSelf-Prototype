@@ -3,6 +3,8 @@ from pymongo import MongoClient
 from bson.json_util import dumps
 import functions
 
+from utils import rate_limit
+
 # Setup Flask app
 app = Flask(__name__)
 
@@ -17,7 +19,7 @@ print("connected to mongodb")
 db = client.seproject3
 video_coll = db.video
 
-
+@app.before_request(rate_limit.rate_limiting)
 
 @app.route('/create_video', methods=['POST'])
 def create_video_endpoint():
