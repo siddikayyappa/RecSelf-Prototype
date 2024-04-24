@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from pymongo import MongoClient
 from bson.json_util import dumps
-from functions import *
+import functions
 
 # Setup Flask app
 app = Flask(__name__)
@@ -22,8 +22,8 @@ video_coll = db.video
 @app.route('/create_video', methods=['POST'])
 def create_video_endpoint():
     data = request.json
-    data = convert_to_object_id(data)
-    success = create_video(data['user_id'], data['topic_id'], data['name'], data['url'], video_coll)
+    data = functions.convert_to_object_id(data)
+    success = functions.create_video(data['user_id'], data['topic_id'], data['name'], data['url'], video_coll)
     if success:
         return jsonify({"success": True, "message": "Video created successfully"}), 200
     else:
@@ -34,8 +34,8 @@ def create_video_endpoint():
 @app.route('/remove_video', methods=['POST'])
 def remove_video():
     data = request.json
-    data = convert_to_object_id(data)
-    success = create_video(data['user_id'], data['topic_id'], data['name'], data['url'], video_coll)
+    data = functions.convert_to_object_id(data)
+    success = functions.remove_video(data['user_id'], data['topic_id'], data['name'], data['url'], video_coll)
     if success:
         return jsonify({"success": True, "message": "Video removed successfully"}), 200
     else:
@@ -46,8 +46,8 @@ def remove_video():
 @app.route('/upvote_video', methods=['POST'])
 def upvote_video():
     data = request.json
-    data = convert_to_object_id(data)
-    success = create_video(data['user_id'], data['topic_id'], data['name'], data['url'], video_coll)
+    data = functions.convert_to_object_id(data)
+    success = functions.upvote_video(data['user_id'], data['topic_id'], data['name'], data['url'], video_coll)
     if success:
         return jsonify({"success": True, "message": "Video upvoted successfully"}), 200
     else:
@@ -58,8 +58,8 @@ def upvote_video():
 @app.route('/downvote_video', methods=['POST'])
 def downvote_video():
     data = request.json
-    data = convert_to_object_id(data)
-    success = create_video(data['user_id'], data['topic_id'], data['name'], data['url'], video_coll)
+    data = functions.convert_to_object_id(data)
+    success = functions.downvote_video(data['user_id'], data['topic_id'], data['name'], data['url'], video_coll)
     if success:
         return jsonify({"success": True, "message": "Video downvoted successfully"}), 200
     else:
