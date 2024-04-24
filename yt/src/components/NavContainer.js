@@ -1,9 +1,12 @@
 import React from "react";
 import  {Nav}  from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
+
 function NavContainer() {
   const [user, setUser] = React.useState(null);
   return (
-    <Nav>
+    <Navbar bg="dark" variant="dark">
+    <Nav >
       <Nav.Item>
         <Nav.Link href="/feed">Feed</Nav.Link>
       </Nav.Item>
@@ -16,7 +19,12 @@ function NavContainer() {
       <Nav.Item>
         <Nav.Link href="/register">Register</Nav.Link>
       </Nav.Item>
+      <Nav.Item>
+        <Nav.Link href="/">Home</Nav.Link>
+      </Nav.Item>
     </Nav>
+  </Navbar>  
+
   );
 }
 

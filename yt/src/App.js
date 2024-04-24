@@ -7,6 +7,7 @@ import LoginForm from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
 import Feed from './components/Feed';
 import AddVideo from './components/AddVideo';
+import BottomMasthead from './components/BottomMastHead';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
   return (
     <div className="App">
       <NavContainer/>
+      <br></br>
       <BrowserRouter>
       <Routes>
         <Route path="/login" element={<LoginForm />} />
@@ -22,6 +24,42 @@ function App() {
         <Route path='/add_video' element={<AddVideo />}/>
       </Routes>
     </BrowserRouter>
+    <BottomMasthead />
+    <div className="app-description"> 
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+      <p>
+      <h1><b>RecSelf</b>: Your Video Discovery and Curation Powerhouse</h1>
+    <br></br>
+      <p>Tired of the same old recommendations? Take control of your video experience with [App Name].</p>
+      </p>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+      <ul>
+        <li><strong>Find the Best:</strong> Easily select videos from YouTube, Daily Motion, etc., and compile them into your personalized feed.</li>
+        <li><strong>Community Curation:</strong> Upvote the videos you truly love, downvote those that don't impress - shape the feed alongside other users.</li>
+        <li><strong>Discover Hidden Gems:</strong> Explore beyond the algorithm and unearth amazing content that might otherwise go unseen.</li>
+        <li>   </li>
+      </ul>
+
+      {/* Add a call-to-action button here, e.g., Download, Learn More */}
+    </div>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
     </div>
   );
 }
