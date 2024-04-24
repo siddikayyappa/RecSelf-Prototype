@@ -10,7 +10,10 @@ class JSONEncoder(json.JSONEncoder):
             return str(o)
         return json.JSONEncoder.default(self, o)
 
-
+def convert_to_object_id(json_data):
+    json_data['user_id'] = ObjectId(json_data['user_id'])
+    json_data['topic_id'] = ObjectId(json_data['topic_id'])
+    return json_data
 
 
 

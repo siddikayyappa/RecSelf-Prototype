@@ -21,8 +21,7 @@ if __name__ == "__main__":
 
     for msg in consumer:
         request = json.loads(msg.value.decode('utf-8'))
-        request['args']['topic_id'] = ObjectId(request['args']['topic_id'])
-        request['args']['user_id'] = ObjectId(request['args']['user_id'])
+        request['args'] = convert_to_object_id(request['args'])
         
         # Process RPC request
         if(request['method'] == 'create_video'):
