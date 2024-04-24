@@ -6,7 +6,7 @@ app = Flask(__name__)
 # Define rate limiting parameters
 TOKEN_BUCKET_CAPACITY = 100  # Maximum tokens in the bucket
 TOKEN_REFILL_RATE = 1  # Tokens added per second
-LAST_REQUEST_TIME = datetime.now(datetime.UTC)
+LAST_REQUEST_TIME = datetime.utcnow()
 TOKEN_BUCKET = TOKEN_BUCKET_CAPACITY
 
 # Rate limiting middleware
@@ -15,7 +15,7 @@ def rate_limiting():
     global LAST_REQUEST_TIME, TOKEN_BUCKET
     
     # Refill the token bucket
-    now = datetime.now(datetime.UTC)
+    now = datetime.utcnow()
     time_diff = (now - LAST_REQUEST_TIME).total_seconds()
     tokens_to_add = time_diff * TOKEN_REFILL_RATE
     TOKEN_BUCKET = min(TOKEN_BUCKET + tokens_to_add, TOKEN_BUCKET_CAPACITY)
