@@ -1,4 +1,17 @@
 import json
+from bson.objectid import ObjectId
+
+
+
+class JSONEncoder(json.JSONEncoder):
+    """ Extend JSONEncoder class to handle ObjectId types in MongoDB documents. """
+    def default(self, o):
+        if isinstance(o, ObjectId):
+            return str(o)
+        return json.JSONEncoder.default(self, o)
+
+
+
 
 
 def create_video(user_id, topic_id, name, url, video_coll):
