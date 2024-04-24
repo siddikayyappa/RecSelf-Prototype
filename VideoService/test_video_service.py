@@ -5,8 +5,8 @@ from bson.objectid import ObjectId
 import functions
 
 
-topic1 = 'topic1'
-user1 = 'user1'
+topic1 = ObjectId()
+user1 = ObjectId()
 
 requests = [
 # {
