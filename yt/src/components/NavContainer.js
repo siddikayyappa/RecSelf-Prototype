@@ -1,7 +1,15 @@
+import React from "react";
 import  {Nav}  from "react-bootstrap";
 function NavContainer() {
+  const [user, setUser] = React.useState(null);
   return (
     <Nav>
+      <Nav.Item>
+        <Nav.Link href="/feed">Feed</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link href="/add_video">Add New Video</Nav.Link>
+      </Nav.Item>
       <Nav.Item>
         <Nav.Link href="/login">Login</Nav.Link>
       </Nav.Item>
