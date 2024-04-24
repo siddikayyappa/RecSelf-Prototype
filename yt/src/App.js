@@ -8,6 +8,7 @@ import RegisterForm from './components/RegisterForm';
 import Feed from './components/Feed';
 import AddVideo from './components/AddVideo';
 import BottomMasthead from './components/BottomMastHead';
+import Profile from './components/Profile';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/register" element={<RegisterForm />} />
         <Route path='/feed' element={<Feed />}/>
         <Route path='/add_video' element={<AddVideo />}/>
+        <Route path='/profile' element={<Profile />}/>
       </Routes>
     </BrowserRouter>
     <BottomMasthead />
@@ -32,11 +34,9 @@ function App() {
     <br></br>
     <br></br>
     <br></br>
-      <p>
       <h1><b>RecSelf</b>: Your Video Discovery and Curation Powerhouse</h1>
     <br></br>
-      <p>Tired of the same old recommendations? Take control of your video experience with RecSelf.</p>
-      </p>
+      Tired of the same old recommendations? Take control of your video experience with RecSelf.
     <br></br>
     <br></br>
     <br></br>
@@ -52,7 +52,7 @@ function App() {
     <br></br>
     <br></br>
     <br></br>
-            <h4>Written By: Siddik Ayyappa, Balaramkrishna Varma, Meka Sai Mukund, Sudheer Reddy, Ananth Shayana Reddy</h4>
+            <h4>Created By: Siddik Ayyappa, Balaramkrishna Varma, Meka Sai Mukund, Sudheer Reddy, Ananth Shayana Reddy</h4>
     <br></br>
     <br></br>
     <br></br>

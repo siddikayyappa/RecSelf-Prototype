@@ -12,8 +12,6 @@ function RegisterForm() {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Register Service
-        // Send https request post
         const data = {
             "name": name,
             "email": email,
@@ -36,22 +34,21 @@ function RegisterForm() {
         <Form>
         <Form.Group controlId="formBasicName">
             <Form.Label>Name</Form.Label>
-            <Form.Control className="w-50 center" type="text" placeholder="Enter Name" value={name} onChange={(e) => setName(e.target.value)}/>
+            <Form.Control className="w-25 center" type="text" placeholder="Enter Name" value={name} onChange={(e) => setName(e.target.value)}/>
             <Form.Text className="text-muted">
             </Form.Text>
         </Form.Group>
             <br></br>
         <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control className="w-50 center"  type="email" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <Form.Control className="w-25 center"  type="email" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} />
             <Form.Text className="text-muted">
             </Form.Text>
         </Form.Group>
             <br></br>
-    
         <Form.Group controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control className="w-50 center" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <Form.Control className="w-25 center" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </Form.Group>
             <br></br>
         <Button variant="primary" type="submit" onClick={handleSubmit}>
