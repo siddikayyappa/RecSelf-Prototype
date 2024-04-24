@@ -2,6 +2,8 @@ from kafka import KafkaProducer
 import json, time
 from pymongo import MongoClient
 from bson.objectid import ObjectId
+import functions
+
 
 topic1 = 'topic1'
 user1 = 'user1'
@@ -50,5 +52,5 @@ if __name__ == "__main__":
     producer = KafkaProducer(bootstrap_servers='localhost:9092')
     for request in requests:
         request['timestamp'] = time.time()
-        producer.send("VideoServer", json.dumps(request).encode('utf-8'))
+        producer.send("VideoServer", json.dumps(request, cls=functions.JSONEncoder).encode('utf-8'))
     producer.flush()
