@@ -3,7 +3,7 @@ var express = require("express");
 var router = express.Router();
 const Topic = require("../models/topic");
 
-router.get("/validate", async (req, res) => {
+router.post("/validate", async (req, res) => {
   var token = req.body.token;
   const res1 = await axios.get("http://localhost:4000/login/isUserAuth", {
     headers: {
@@ -24,7 +24,8 @@ router.get("/validate", async (req, res) => {
   }
 });
 
-router.get("/all", async (req, res) => {
+
+router.post("/all", async (req, res) => {
   var token = req.body.token;
   const res1 = await axios.get("http://localhost:4000/login/isUserAuth", {
     headers: {
